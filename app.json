@@ -1,0 +1,29 @@
+{
+	"name": "Dial2Verify Twilio",
+	"description": "This app does one little thing, and does it well.",
+	"repository": "https://github.com/jane-doe/small-sharp-tool",
+	"scripts": {
+    	"postdeploy": "php artisan migrate && php artisan twilio:setup && bower install"
+  	},
+  	"env": {
+	    "TWILIO_SID": {
+	    	"description": "Twilio account SID",
+	    	"required": true
+	    },
+	    "TWILIO_TOKEN": {
+	    	"description": "Twilio secret token",
+	    	"required": true
+	    },
+	    "MOBILE_ONLY": {
+	    	"description": "Only accept mobile number verification",
+	    	"value": "False"
+	    },
+	    "APP_KEY": {
+	    	"description": "Lumen app key",
+	    	"generator": "secret"
+	    }
+    },
+    "addons": [
+    	"memcachedcloud:30"
+    ]
+}

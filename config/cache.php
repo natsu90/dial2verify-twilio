@@ -1,6 +1,6 @@
 <?php
 
-$redis_url = getenv('CACHE_REDIS_CONNECTION', 'default');
+$redis_url = env('CACHE_REDIS_CONNECTION', 'default');
 if (getenv('REDIS_URL')) {
 
     $redis_url = getenv('REDIS_URL');

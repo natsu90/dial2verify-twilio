@@ -30,5 +30,13 @@
     "addons": [
     	"cleardb:ignite",
     	"heroku-redis:hobby-dev"
-    ]
+    ],
+    "buildpacks": [
+    	{
+    		"url": "heroku/nodejs"
+    	},
+    	{
+    		"url": "heroku/php"
+    	}
+  	]
 }

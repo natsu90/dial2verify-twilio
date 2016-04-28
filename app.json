@@ -18,6 +18,10 @@
 	    	"description": "Only accept mobile number verification",
 	    	"value": "False"
 	    },
+	    "URL": {
+	    	"description": "The application URL e.g http://your-site-69.herokuapp.com",
+	    	"required": true
+	    },
 	    "APP_KEY": {
 	    	"description": "Lumen app key",
 	    	"generator": "secret"
@@ -25,6 +29,6 @@
     },
     "addons": [
     	"cleardb:ignite",
-    	"memcachedcloud:30"
+    	"heroku-redis:hobby-dev"
     ]
 }

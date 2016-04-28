@@ -1,9 +1,9 @@
 {
 	"name": "Dial2Verify Twilio",
-	"description": "This app does one little thing, and does it well.",
-	"repository": "https://github.com/jane-doe/small-sharp-tool",
+	"description": "Phone verification at no cost",
+	"repository": "https://github.com/natsu90/dial2verify-twilio",
 	"scripts": {
-    	"postdeploy": "php artisan migrate && php artisan twilio:setup && bower install"
+    	"postdeploy": "php artisan migrate && php artisan twilio:setup && cd public/ && npm install"
   	},
   	"env": {
 	    "TWILIO_SID": {
@@ -24,6 +24,7 @@
 	    }
     },
     "addons": [
+    	"cleardb:ignite",
     	"memcachedcloud:30"
     ]
 }

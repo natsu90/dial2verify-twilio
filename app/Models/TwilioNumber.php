@@ -10,6 +10,7 @@ use libphonenumber\NumberParseException;
 use libphonenumber\PhoneNumberType;
 use libphonenumber\PhoneNumberFormat;
 use App\Events\NumberVerified;
+use Vectorface\Whip\Whip;
 
 class TwilioNumber extends Model {
 
@@ -18,9 +19,9 @@ class TwilioNumber extends Model {
 
     public $timestamps = false;
 
-    public static function verify($number, $country_code)
+    public static function verify($number)
     {
-        $valid_number = self::isValid($number, $country_code);
+        $valid_number = self::isValid($number);
     	if(!$valid_number)
     		return false;
 
@@ -54,8 +55,10 @@ class TwilioNumber extends Model {
 	    return true;
     }
 
-    public static function isValid($number, $country_code)
+    public static function isValid($number)
     {
+        $country_code = self::getCountryCode();
+
     	$phoneUtil = PhoneNumberUtil::getInstance();
 
 		try {
@@ -76,8 +79,11 @@ class TwilioNumber extends Model {
 		}
     }
 
-    public static function getCountryCode($ip)
+    public static function getCountryCode()
     {
+        $whip = new Whip(Whip::PROXY_HEADERS);
+        $ip = $whip->getValidIpAddress();
+
     	$client = new Client(['base_uri' => 'https://freegeoip.lwan.ws/json/']);
     	$response = $client->request('GET', $ip);
 

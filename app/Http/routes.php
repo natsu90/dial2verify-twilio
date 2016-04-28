@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use App\Models\TwilioNumber;
-use Vectorface\Whip\Whip;
 use App\Events\LongPolling;
 use App\Events\ServerSentEvents;
 /*
@@ -50,11 +49,8 @@ $app->post('/verify', function(Request $request) {
 	]);
 
     $number = $request->input('number');
-	$whip = new Whip(Whip::PROXY_HEADERS);
-	$ip = $whip->getValidIpAddress();
-    $country_code = TwilioNumber::getCountryCode($ip);
 
-    $data = TwilioNumber::verify($number, $country_code);
+    $data = TwilioNumber::verify($number);
     if($data)
     	return response()->json($data);
 

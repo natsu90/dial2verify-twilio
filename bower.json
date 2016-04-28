@@ -1,9 +1,0 @@
-{
-    "name": "Dial2verify Twilio",
-    "dependencies": {
-        "angular": "~1.5",
-        "angular-resource": "*",
-        "sweetalert2": "~1.3.2",
-        "event-source-polyfill": "*"
-    }
-}

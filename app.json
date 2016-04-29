@@ -22,9 +22,14 @@
 	    	"description": "The application URL e.g http://your-site-88.herokuapp.com",
 	    	"required": true
 	    },
-	    "APP_KEY": {
-	    	"description": "Lumen app key",
-	    	"generator": "secret"
+	    "APP_DEBUG": {
+	    	"value": "false"
+	    },
+	    "NPM_CONFIG_PRODUCTION": {
+	    	"value": false
+	    },
+	    "NPM_CONFIG_PREFIX": {
+	    	"value": "public"
 	    }
     },
     "addons": [

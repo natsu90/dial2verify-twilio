@@ -52,10 +52,10 @@ class TwilioSetup extends Command
 
         $body = json_decode($response->getBody());
 
+        TwilioNumber::truncate();
         foreach($body->incoming_phone_numbers as $number)
         {
             // save to db
-            TwilioNumber::truncate();
             TwilioNumber::create([
                 'sid' => $number->sid,
                 'number' => $number->phone_number

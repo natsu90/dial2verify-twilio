@@ -1,5 +1,6 @@
 /vendor
 .env
+/node_modules
 /public/node_modules/*
 /public/typings
 /public/app/*.js

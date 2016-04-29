@@ -3,7 +3,7 @@
 	"description": "Phone verification at no cost",
 	"repository": "https://github.com/natsu90/dial2verify-twilio",
 	"scripts": {
-    	"postdeploy": "php artisan migrate && php artisan twilio:setup && npm install --prefix public/"
+    	"postdeploy": "php artisan migrate && php artisan twilio:setup && cd public/ && npm install && npm run tsc"
   	},
   	"env": {
 	    "TWILIO_SID": {
@@ -19,7 +19,7 @@
 	    	"value": "False"
 	    },
 	    "URL": {
-	    	"description": "The application URL e.g http://your-site-69.herokuapp.com",
+	    	"description": "The application URL e.g http://your-site-88.herokuapp.com",
 	    	"required": true
 	    },
 	    "APP_KEY": {

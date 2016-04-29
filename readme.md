@@ -22,13 +22,13 @@ Noted that Twilio will trigger webhook for any incoming phone call if you set th
 
 ### Demo
 
-http://dial2verify.herokuapp.com
+http://dial2verify-twilio.herokuapp.com
 
 ### Dependencies
 
 - PHP >= 5.5.9
 - MySQL
-- Memcached
+- Redis
 
 ### Installation
 
@@ -44,15 +44,9 @@ TWILIO_TOKEN=
 MOBILE_ONLY=False # set to true if you want to accept verification from mobile number only
 URL=http://your-site.com
 ```
-3. Run `composer install` to install dependencies
-4. Run below commands to create table and set necessary configuration in your Twilio dashboard
-```sh
-php artisan migrate && php artisan twilio:setup
-```
-5. Run below commands to compile Angular2 Typescript and install its dependencies
-```sh
-cd public/ && npm install
-```
+3. `composer install`
+4. `php artisan migrate && php artisan twilio:setup`
+5. `cd public/ && npm install && npm run tsc`
 
 ### License
 

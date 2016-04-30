@@ -3,7 +3,7 @@
 	"description": "Phone verification at no cost",
 	"repository": "https://github.com/natsu90/dial2verify-twilio",
 	"scripts": {
-    	"postdeploy": "php artisan migrate && php artisan twilio:setup && cd public/ && npm install && npm run tsc"
+    	"postdeploy": "php artisan migrate && php artisan twilio:setup && cd public/ && npm install"
   	},
   	"env": {
 	    "TWILIO_SID": {
@@ -24,12 +24,6 @@
 	    },
 	    "APP_DEBUG": {
 	    	"value": "false"
-	    },
-	    "NPM_CONFIG_PRODUCTION": {
-	    	"value": false
-	    },
-	    "NPM_CONFIG_PREFIX": {
-	    	"value": "public"
 	    }
     },
     "addons": [

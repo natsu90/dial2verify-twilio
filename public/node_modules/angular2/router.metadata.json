@@ -1,0 +1,1 @@
+{"__symbolic":"module","module":"angular2/router","metadata":{"ROUTER_DIRECTIVES":[{"__symbolic":"reference","name":"RouterOutlet","module":"angular2/src/router/directives/router_outlet"},{"__symbolic":"reference","name":"RouterLink","module":"angular2/src/router/directives/router_link"}]}}

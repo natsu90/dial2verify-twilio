@@ -1,0 +1,1 @@
+{"__symbolic":"module","module":"angular2/src/core/change_detection/differs/default_keyvalue_differ","metadata":{"DefaultKeyValueDifferFactory":{"__symbolic":"class","decorators":[{"__symbolic":"call","expression":{"__symbolic":"reference","name":"CONST","module":"angular2/src/facade/lang"}}]}}}

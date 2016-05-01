@@ -79,10 +79,15 @@ class TwilioNumber extends Model {
 		}
     }
 
+    public static function getIpAddress()
+    {
+       $whip = new Whip(Whip::PROXY_HEADERS);
+        return $whip->getValidIpAddress(); 
+    }
+
     public static function getCountryCode()
     {
-        $whip = new Whip(Whip::PROXY_HEADERS);
-        $ip = $whip->getValidIpAddress();
+        $ip = self::getIpAddress();
 
     	$client = new Client(['base_uri' => 'https://freegeoip.lwan.ws/json/']);
     	$response = $client->request('GET', $ip);

@@ -81,7 +81,7 @@ class TwilioNumber extends Model {
 
     public static function getIpAddress()
     {
-       $whip = new Whip(Whip::PROXY_HEADERS);
+        $whip = new Whip(Whip::PROXY_HEADERS | Whip::REMOTE_ADDR);
         return $whip->getValidIpAddress(); 
     }
 

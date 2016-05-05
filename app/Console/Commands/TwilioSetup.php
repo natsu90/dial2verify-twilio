@@ -65,9 +65,9 @@ class TwilioSetup extends Command
             $response = $client->request('POST', sprintf('IncomingPhoneNumbers/%s.json', $number->sid), 
                 [
                     'form_params' => [
-                        'VoiceUrl' => getenv('URL') . '/twiml',
+                        'VoiceUrl' => getenv('APP_URL') . '/twiml',
                         'VoiceMethod' => 'GET',
-                        'StatusCallback' => getenv('URL') . '/status',
+                        'StatusCallback' => getenv('APP_URL') . '/status',
                         'StatusCallbackMethod' => 'POST'
                     ]
                 ]);

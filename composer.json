@@ -11,9 +11,7 @@
         "guzzlehttp/guzzle": "~6.0",
         "giggsey/libphonenumber-for-php": "^7.3",
         "igorw/event-source": "1.0.*",
-        "vectorface/whip": "^0.3.1",
-        "predis/predis": "^1.0",
-        "illuminate/redis": "^5.2"
+        "vectorface/whip": "^0.3.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

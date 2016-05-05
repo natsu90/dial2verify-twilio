@@ -81,8 +81,14 @@ $app->singleton(
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 $app->register(App\Providers\EventServiceProvider::class);
-$app->register('Illuminate\Redis\RedisServiceProvider');
+// $app->register('Illuminate\Redis\RedisServiceProvider');
 
+if ($app->config->get('database.default') === 'sqlite') {
+    $path = $app->config->get('database.connections.sqlite.database');
+    if (!file_exists($path) && is_dir(dirname($path))) {
+        touch($path);
+    }
+}
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

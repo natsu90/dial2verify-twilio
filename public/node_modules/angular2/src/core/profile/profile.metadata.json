@@ -1,1 +1,0 @@
-{"__symbolic":"module","module":"angular2/src/core/profile/profile","metadata":{"wtfEnabled":{"__symbolic":"call","expression":{"__symbolic":"select","expression":{"__symbolic":"reference","name":"impl","module":"angular2/src/core/profile/wtf_impl"},"member":"detectWTF"}}}}

@@ -3,3 +3,7 @@
 /node_modules
 /public/typings
 /public/etc
+/public/node_modules
+/public/app/*.js
+/public/app/*.js.map
+/database/*.sqlite

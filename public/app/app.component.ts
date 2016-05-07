@@ -50,9 +50,9 @@ export class AppComponent implements OnInit {
  	}
 
  	onVerifying(data) {
- 		this.subscribeEvents();
  		this.isVerifyingInput = false;
  		this.number = data.valid_number;
+ 		this.subscribeEvents();
  		swal({
 			title: data.number_to_dial,
 			text: "Dial this number within 90 secs from now to verify",

@@ -53,11 +53,16 @@ class PhoneValidation {
 		if(!$this->validate())
 			throw new Exception("WRONG-FORMAT", 400);
 			
-		if(!Cache::tags($this->getValidNumber())->has('verifying')) {
+		$valid_number = $this->getValidNumber();
+		if(!Cache::tags($valid_number)->has('verifying')) {
+
 			$number_to_dial = TwilioNumber::getRandomNumber();
-            Cache::tags($this->getValidNumber())->put('verifying', $number_to_dial, $ttl);
+            Cache::tags($valid_number)->put('verifying', $number_to_dial, $ttl);
+            
             return $number_to_dial;
 		}
+
+		return Cache::tags($valid_number)->get('verifying');
 	}
 
 	public static function triggerVerified($number, $number_to_dial)

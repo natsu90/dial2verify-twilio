@@ -77,12 +77,3 @@ $app->get('/events/{number}', function($number) {
 	$sse = new ServerSentEvents($number);
 	$sse->output();
 });
-
-$app->get('/country', function(Request $request) {
-
-	return response()->json([
-		'country_code' => TwilioNumber::getCountryCode(), 
-		'ip' => TwilioNumber::getIpAddress(),
-		'ip0' => $request->ip()
-	]);
-});

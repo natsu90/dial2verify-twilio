@@ -22,27 +22,23 @@ Noted that Twilio will trigger webhook for any incoming phone call if you set th
 
 ### Demo
 
-http://dial2verify-twilio.herokuapp.com
+http://dial2verify-twilio.namial.us
 
 ### Dependencies
 
 - PHP >= 5.5.9
-- MySQL
-- Redis
+- SQLite
+- Memcached
 
 ### Installation
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/natsu90/dial2verify-twilio)
-
-#### OR
-
 1. Copy `.env.sample` content to `.env`
-2. Set the MySQL detail, and as well as following details,
+2. Set the following details,
 ```
 TWILIO_SID=
 TWILIO_TOKEN=
-MOBILE_ONLY=False # set to true if you want to accept verification from mobile number only
-URL=http://your-site.com
+MOBILE_ONLY=false # set to true if you want to accept verification from mobile number only
+APP_URL=http://your-site.com
 ```
 3. `composer install`
 4. `php artisan migrate && php artisan twilio:setup`

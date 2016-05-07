@@ -7,7 +7,7 @@ use Igorw\EventSource\Stream;
 
 class ServerSentEvents 
 {
-	public $number;
+	private $number;
 
 	private $ttl = 10/ 60 *1;
 

@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use App\Models\TwilioNumber;
 use App\Events\LongPolling;
 use App\Events\ServerSentEvents;
+use App\TwilioStatus;
+use App\PhoneValidation;
+use App\GeoIp;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -30,14 +33,17 @@ $app->get('/twiml', function() {
 // twilio status webhook
 $app->post('/status', function(Request $request) {
 
-	$data = $request->instance()->request->all();
-	$signature = $request->header('X-Twilio-Signature');
-	$url = $request->fullUrl();
+    try {
 
-	if(TwilioNumber::verified($data, $url, $signature))
+    	$status = new TwilioStatus($request);
+    	$status->verifyNumber();
+
     	return response('OK', 200);
 
-    return response('NOT-AUTHORIZED', 401);
+	} catch(Exception $e) {
+
+		return response($e->getMessage(), $e->getCode()); 
+	}
 });
 
 // post number to verify
@@ -47,14 +53,20 @@ $app->post('/verify', function(Request $request) {
 
 		'number' => 'required'
 	]);
+	
+    $geoip = new GeoIp($request->ip());
 
-    $number = $request->input('number');
+    try {
 
-    $data = TwilioNumber::verify($number);
-    if($data)
-    	return response()->json($data);
+    	$phone_validation = new PhoneValidation($request->input('number'), $geoip);
+    	$number_to_dial = $phone_validation->verify();
+    	$valid_number = $phone_validation->getValidNumber();
+    	return response()->json(compact('number_to_dial', 'valid_number'));
 
-    return response('WRONG-FORMAT', 400);
+    } catch(Exception $e) {
+
+		return response($e->getMessage(), $e->getCode() ?: 400); 
+	}
 });
 
 // server sent event

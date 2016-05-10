@@ -4,6 +4,10 @@ Phone verification at no cost!
 
 Well, not really. You still have to pay Twilio for the phone numbers ($1 per month each).
 
+### Warning
+
+A lot of peoples have pointed out that phone number can be spoofed, so this can't be used as a form of secure authentication. More discussions here: https://news.ycombinator.com/item?id=11652454
+
 ### Idea
 
 I stumbled this [page](https://www.twilio.com/docs/api/twiml/reject) in Twilio API documentation while working on some other idea.

@@ -24,7 +24,7 @@
     <![endif]-->
 
     <!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="http://purecss.io/combo/1.18.13?/css/layouts/marketing.css">
+    <link rel="stylesheet" href="/style.css">
     <!--<![endif]-->
     
 	<!--[if lt IE 9]>

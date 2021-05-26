@@ -4,6 +4,8 @@ Phone verification at no cost!
 
 Well, not really. You still have to pay Twilio for the phone numbers ($1 per month each).
 
+[![Featured on Hacker News](https://hackerbadge.now.sh/api?id=11652454)](https://news.ycombinator.com/item?id=11652454)
+
 ### Warning
 
 A lot of peoples have pointed out that phone number can be spoofed, so this can't be used as a form of secure authentication. More discussions here: https://news.ycombinator.com/item?id=11652454
@@ -14,7 +16,7 @@ I stumbled this [page](https://www.twilio.com/docs/api/twiml/reject) in Twilio A
 
 > The `<Reject>` verb rejects an incoming call to your Twilio number without billing you. This is very useful for blocking unwanted calls.
 
-![itsfreememe](http://i0.kym-cdn.com/entries/icons/original/000/005/169/Screenshot_67.png "It's Free!")
+![itsfreememe](https://i.kym-cdn.com/entries/icons/original/000/005/169/Screenshot_67.png "It's Free!")
 
 Noted that Twilio will trigger webhook for any incoming phone call if you set the **Status Callback URL**. So I thought this can be used for phone verification, with no additional cost.
 

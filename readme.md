@@ -1,4 +1,9 @@
-## Dial2Verify Twilio
+![maintenance-status](https://img.shields.io/badge/maintenance-deprecated-red.svg)
+
+### Go to [Version 2.0](https://github.com/natsu90/dial2verify-twilio-2)
+
+
+## Dial2Verify Twilio 
 
 Phone verification at no cost!
 
